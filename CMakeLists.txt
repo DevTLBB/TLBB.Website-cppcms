@@ -40,8 +40,8 @@ add_custom_command(
 	  ${VIEWS_TMPL}
 	DEPENDS ${VIEWS_TMPL}
 )
-#add_library(view SHARED ${CMAKE_CURRENT_BINARY_DIR}/view.cpp)
-#target_link_libraries(view ${BOOSTER} ${CPPCMS})
+add_library(view SHARED ${CMAKE_CURRENT_BINARY_DIR}/view.cpp)
+target_link_libraries(view ${BOOSTER} ${CPPCMS})
 
 # Application build
 add_executable(${APP_NAME} ${APP_SRC})
