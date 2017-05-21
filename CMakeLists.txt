@@ -5,7 +5,7 @@ set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "limited configs" FOR
 set(APP_NAME main)
 project(${APP_NAME})
 
-find_program(TMPLCC cppcms_tmpl_cc)
+find_program(EXE_TMPL_CC cppcms_tmpl_cc)
 
 # Required Lib List
 set(APP_REQUIRED_LIB
@@ -15,7 +15,8 @@ set(APP_REQUIRED_LIB
 
 # List views template
 set(VIEWS_TMPL
-  ${CMAKE_CURRENT_SOURCE_DIR}/resources/views/home.tmpl
+	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/app/app.tmpl
+	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/home.tmpl
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/dashboard.tmpl
 
 )
@@ -27,19 +28,20 @@ set(APP_SRC
 	routes/web.cpp
 	routes/api.cpp
 	app/http/controllers/controller.cpp
+	app/http/controllers/dashboard_controller.cpp
 )
 
 # Views build
 add_custom_command(
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/view.cpp
-  COMMAND ${TMPLCC}
+	COMMAND ${EXE_TMPL_CC}
     -d views
     -o ${CMAKE_CURRENT_BINARY_DIR}/view.cpp 
 	  ${VIEWS_TMPL}
 	DEPENDS ${VIEWS_TMPL}
 )
-add_library(view SHARED ${CMAKE_CURRENT_BINARY_DIR}/view.cpp)
-target_link_libraries(view ${BOOSTER} ${CPPCMS})
+#add_library(view SHARED ${CMAKE_CURRENT_BINARY_DIR}/view.cpp)
+#target_link_libraries(view ${BOOSTER} ${CPPCMS})
 
 # Application build
 add_executable(${APP_NAME} ${APP_SRC})
