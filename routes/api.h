@@ -4,13 +4,13 @@
 
 namespace routes
 {
-class API : public cppcms::application
-{
- public:
-  API(cppcms::service &s);
+  class API : public cppcms::application
+  {
+   public:
+    API(cppcms::service &s);
 
-	virtual void main(std::string path);
-};
+    virtual void main(std::string path);
+  };
 }
 
 #endif

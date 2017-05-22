@@ -1,18 +1,21 @@
 #include "api.h"
 
-routes::API::API(cppcms::service &s) : cppcms::application(s)
+namespace routes
 {
-
-}
-
-void routes::API::main(std::string path)
-{
-	try
+  API::API(cppcms::service &s) : cppcms::application(s)
   {
-    cppcms::application::main(path);
+
   }
-	catch(std::exception &e)
-	{
-	
-	}
+
+  void API::main(std::string path)
+  {
+    try
+    {
+      cppcms::application::main(path);
+    }
+    catch(std::exception &e)
+    {
+
+    }
+  }
 }
