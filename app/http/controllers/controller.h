@@ -15,7 +15,7 @@ namespace app
       class Controller : public cppcms::application
       {
        public:
-        Controller(cppcms::service &s);// : cppcms::application(s) {}
+        Controller(cppcms::service &s);
       };
     }
   }

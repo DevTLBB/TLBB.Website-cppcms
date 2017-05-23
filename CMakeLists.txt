@@ -29,6 +29,8 @@ set(APP_SRC
 	routes/api.cpp
 	app/http/controllers/controller.cpp
 	app/http/controllers/dashboard_controller.cpp
+	app/http/controllers/home_controller.cpp
+	
 )
 
 # Views build
