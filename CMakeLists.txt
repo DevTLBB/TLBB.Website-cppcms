@@ -15,7 +15,7 @@ set(APP_REQUIRED_LIB
 
 # List views template
 set(VIEWS_TMPL
-	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/app/app.tmpl
+	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app.tmpl
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/home.tmpl
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/dashboard.tmpl
 
