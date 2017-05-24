@@ -33,6 +33,13 @@ set(APP_SRC
 	
 )
 
+#set(GCC_COVERAGE_COMPILE_FLAGS "-fprofile-arcs -ftest-coverage -Wall")
+#set(GCC_COVERAGE_LINK_FLAGS    "-lgcov")
+
+#set( CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS},-Wl " )
+#set( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
+#set( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}" )
+
 # Views build
 add_custom_command(
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/view.cpp

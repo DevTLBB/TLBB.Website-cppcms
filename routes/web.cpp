@@ -9,13 +9,13 @@ namespace routes
 {
   Web::Web(cppcms::service &s) : cppcms::application(s)
   {
-    /*attach(new HomeController(s),
+		attach(new app::http::controllers::HomeController(s),
       "home",
       "/{1}",
       "/",
-      1);*/
-		dispatcher().assign("^/page/(\\w+)$", &app::http::controllers::HomeController::index, 1);
-		//dispatcher().assign("/number/(\\d+)", &app::http::controllers::HomeController::index, this, 1);  
+      1);
+ 
+		//dispatcher().assign("/", &app::http::controllers::HomeController::index);
     //mapper().assign("number","/number/{1}");
   }
 
