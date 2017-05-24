@@ -5,7 +5,6 @@
 #include "../app/http/controllers/controller.h"
 #include "../app/http/controllers/home_controller.h"
 
-
 namespace routes
 {
   Web::Web(cppcms::service &s) : cppcms::application(s)
@@ -15,8 +14,9 @@ namespace routes
       "/{1}",
       "/",
       1);*/
-    dispatcher().assign("/", &app::http::controllers::HomeController::index);
-		//mapper().assign("/{1}");
+		dispatcher().assign("^/page/(\\w+)$", &app::http::controllers::HomeController::index, 1);
+		//dispatcher().assign("/number/(\\d+)", &app::http::controllers::HomeController::index, this, 1);  
+    //mapper().assign("number","/number/{1}");
   }
 
   void Web::main(std::string path)

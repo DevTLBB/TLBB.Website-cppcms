@@ -3,10 +3,12 @@
 #include <cppcms/view.h>
 #include <string>
 
-namespace views {
+namespace views
+{
 	namespace layouts
 	{
-		struct app : public cppcms::base_content {
+		struct app : public cppcms::base_content
+		{
 			std::string text;
 		};
 	}

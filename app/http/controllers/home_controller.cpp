@@ -12,7 +12,7 @@ namespace app
 
 			}
 
-			void HomeController::index(std::string /* path */)
+			void HomeController::index()
 			{
 			
 			}
