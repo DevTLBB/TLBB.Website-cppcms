@@ -1,17 +1,17 @@
-#ifndef APP_CORE_VIEW_H_
-#define APP_CORE_VIEW_H_
+#ifndef RESOURCES_VIEWS_H_
+#define RESOURCES_VIEWS_H_
 #include <cppcms/view.h>
 #include <string>
 
 namespace views
 {
-	namespace layouts
+  namespace layouts
+  {
+	struct app : public cppcms::base_content
 	{
-		struct app : public cppcms::base_content
-		{
-			std::string text;
-		};
-	}
+	  std::string text;
+	};
+  }
 }
 
 #endif

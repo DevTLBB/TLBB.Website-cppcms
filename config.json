@@ -22,5 +22,9 @@
 	"enable" : true,
 	"listing" : true,
 	"document_root" : "../resources/media"
+  },
+  "views" : {
+	"paths" : ["."],
+  	"skins" : ["bootstrap"]
   }
 }

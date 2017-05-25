@@ -126,6 +126,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${C_FLAGS}")
 #############################################################################
 
 # Views build
+set(VIEW_SKIN bootstrap)
 add_custom_command(
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/view.cpp
 	COMMAND ${EXE_TMPL_CC}
@@ -134,8 +135,8 @@ add_custom_command(
 	  ${VIEWS_TMPL}
 	DEPENDS ${VIEWS_TMPL}
 )
-add_library(view SHARED ${CMAKE_CURRENT_BINARY_DIR}/view.cpp)
-target_link_libraries(view ${BOOSTER} ${CPPCMS})
+add_library(${VIEW_SKIN} SHARED ${CMAKE_CURRENT_BINARY_DIR}/view.cpp)
+target_link_libraries(${VIEW_SKIN} ${BOOSTER} ${CPPCMS})
 
 # Application build
 add_executable(${APP_NAME} ${APP_SRC})

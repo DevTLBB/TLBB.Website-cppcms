@@ -17,8 +17,9 @@ namespace app
 
 	  void HomeController::index()
 	  {
-		std::cout << "Index" << std::endl;
-        response().make_error_response(cppcms::http::response::forbidden);
+        views::layouts::app c;  
+        c.text=">>>Hello<<<";  
+        render("app",c); 
 	  }
 	}
   }
