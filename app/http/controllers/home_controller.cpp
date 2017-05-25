@@ -11,7 +11,7 @@ namespace app
 		{
 			HomeController::HomeController(cppcms::service &s) : Controller(s)
 			{
-				dispatcher().assign("/", &HomeController::index, 1, 1);
+				//ctl.dispatcher().assign("/", &HomeController::index, 1, 1);
 			}
 
 			void HomeController::index()

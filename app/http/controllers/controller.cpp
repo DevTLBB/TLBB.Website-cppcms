@@ -6,7 +6,7 @@ namespace app
 	{
 		namespace controllers
 		{
-			Controller::Controller(cppcms::service &s) : cppcms::application(s)
+			Controller::Controller(cppcms::service &s) : app::core::Provider(s)
 			{
 
 			}

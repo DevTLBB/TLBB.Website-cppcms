@@ -1,16 +1,15 @@
-#ifndef APP_CORE_ROUTE_H_
-#define APP_CORE_ROUTE_H_
+#ifndef APP_CORE_PROVIDER_H_
+#define APP_CORE_PROVIDER_H_
 #include <cppcms/application.h>
-#include "provider.h"
 
 namespace app
 {
 	namespace core
 	{
-		class Router : public Provider
+		class Provider : public cppcms::application
 		{
 		 public:
-			Router(cppcms::service &s);
+			Provider(cppcms::service &s);
 
 			virtual void main(std::string path);
 		};

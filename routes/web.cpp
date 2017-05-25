@@ -7,7 +7,7 @@
 
 namespace routes
 {
-  Web::Web(cppcms::service &s) : cppcms::application(s)
+  Web::Web(cppcms::service &s) : app::core::Provider(s)
   {
 		attach(new app::http::controllers::HomeController(s),
       "home",

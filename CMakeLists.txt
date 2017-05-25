@@ -9,13 +9,23 @@ include(CheckCXXSourceCompiles)
 
 find_program(EXE_TMPL_CC cppcms_tmpl_cc)
 
+#############################################################################
+#
 # Required Lib List
+#
+#############################################################################
+
 set(APP_REQUIRED_LIB
   cppcms
   booster
 )
 
+#############################################################################
+#
 # List views template
+#
+#############################################################################
+
 set(VIEWS_TMPL
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app.tmpl
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/home.tmpl
@@ -23,9 +33,15 @@ set(VIEWS_TMPL
 
 )
 
+#############################################################################
+#
 # Application Cpp file need to build
+#
+#############################################################################
+
 set(APP_SRC
   app/main.cpp
+	app/core/provider.cpp
 	app/core/router.cpp
 	routes/web.cpp
 	routes/api.cpp
@@ -102,6 +118,12 @@ endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXX_FLAGS}")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${C_FLAGS}")
+
+#############################################################################
+#
+# Build project
+#
+#############################################################################
 
 # Views build
 add_custom_command(

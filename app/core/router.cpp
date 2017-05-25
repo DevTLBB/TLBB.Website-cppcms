@@ -1,5 +1,5 @@
-#include <iostream>
 #include "router.h"
+
 #include "../../routes/web.h"
 #include "../../routes/api.h"
 
@@ -10,7 +10,7 @@ namespace app
 {
   namespace core
   {
-    Router::Router(cppcms::service &s) : cppcms::application(s)
+    Router::Router(cppcms::service &s) : Provider(s)
     {
       attach(new routes::API(s),
         "api",
@@ -33,13 +33,7 @@ namespace app
       }
       catch(std::exception const &e)
       {
-        std::cerr << "Failed: " << e.what() << std::endl;
-        std::cerr << booster::trace(e) << std::endl;
       }
-      // Write Logs
-      printf("============== Connection Info ===============\n");
-      printf("IP: %s\n", request().remote_host().c_str());
-      printf("Path: %s\n", path.c_str());
     }
   }
 }

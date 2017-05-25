@@ -2,17 +2,20 @@
 #define APP_HTTP_CONTROLLERS_CONTROLLER_H_
 #include <cppcms/application.h>
 
+#include "../../core/provider.h"
+
 namespace app
 {
   namespace core
   {
     class Router;
+    class Provider;
   }
   namespace http
   {
     namespace controllers
     {
-      class Controller : public cppcms::application
+      class Controller : public app::core::Provider
       {
        public:
         Controller(cppcms::service &s);
