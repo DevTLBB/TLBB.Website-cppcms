@@ -8,7 +8,7 @@ int main(int argc, char **argv)
   {
     cppcms::service srv(argc, argv);
     srv.applications_pool().mount(
-      cppcms::applications_factory<app::core::Provider>()
+      cppcms::applications_factory<app::core::Router>()
     );
     srv.run();
   }

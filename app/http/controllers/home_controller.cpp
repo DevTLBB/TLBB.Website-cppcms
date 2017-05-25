@@ -14,7 +14,7 @@ namespace app
 				//ctl.dispatcher().assign("/", &HomeController::index, 1, 1);
 			}
 
-			void HomeController::index()
+			void HomeController::index(int s)
 			{
 			
 			}

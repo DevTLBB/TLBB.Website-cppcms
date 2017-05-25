@@ -10,7 +10,7 @@ namespace app
 {
   namespace core
   {
-    Router::Router(cppcms::service &s) : Provider(s)
+    Router::Router(cppcms::service &s) : cppcms::application(s)
     {
       attach(new routes::API(s),
         "api",

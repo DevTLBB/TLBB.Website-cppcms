@@ -6,11 +6,6 @@
 
 namespace app
 {
-  namespace core
-  {
-    class Router;
-    class Provider;
-  }
   namespace http
   {
     namespace controllers
