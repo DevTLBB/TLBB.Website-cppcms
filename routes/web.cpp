@@ -14,7 +14,7 @@ namespace routes
     //mapper().assign("number","/number/{1}");
     attach(new app::http::controllers::HomeController(s),
       "home",
-      "/{1}",
+      "{1}",
       "/",
       1);
  }

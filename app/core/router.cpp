@@ -5,7 +5,6 @@
 #include "../../routes/web.h"
 #include "../../routes/api.h"
 
-#include <stdio.h>
 namespace app
 {
   namespace core
@@ -20,8 +19,8 @@ namespace app
       // Web Route must be set at last of Router Lists.
       attach(new routes::Web(s),
         "web",
-        "/{1}",
-        "/((/?.*))",
+        "{1}",
+        "((/?.*))",
         1);
     }
 
@@ -37,9 +36,10 @@ namespace app
         std::cerr << booster::trace(e) << std::endl;
       }
       // Write Logs
-      printf("============== Connection Info ===============\n");
-      printf("IP: %s\n", request().remote_host().c_str());
-      printf("Path: %s\n", path.c_str());
+      
+      std::cout << "============== Connection Info ===============" << std::endl;
+	  std::cout << "IP: " << request().remote_host() << std::endl;
+	  std::cout << "Path: " << path << std::endl;
     }
   }
 }

@@ -12,12 +12,13 @@ namespace app
 	{
 	  HomeController::HomeController(cppcms::service &s) : Controller(s)
 	  {
-		dispatcher().assign("/", &HomeController::index, this);
+		dispatcher().assign(".*", &HomeController::index, this);
 	  }
 
 	  void HomeController::index()
 	  {
-
+		std::cout << "Index" << std::endl;
+        response().make_error_response(cppcms::http::response::forbidden);
 	  }
 	}
   }
