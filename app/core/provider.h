@@ -4,15 +4,15 @@
 
 namespace app
 {
-	namespace core
+  namespace core
+  {
+	class Provider : public cppcms::application
 	{
-		class Provider : public cppcms::application
-		{
-		 public:
-			Provider(cppcms::service &s);
+	  public:
+		Provider(cppcms::service &s);
 
-			virtual void main(std::string path);
-		};
-	}
+		// virtual void main(std::string path);
+	};
+  }
 }
 #endif
