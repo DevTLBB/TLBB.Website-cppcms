@@ -5,6 +5,8 @@ set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "limited configs" FOR
 set(APP_NAME main)
 project(${APP_NAME})
 
+include(CheckCXXSourceCompiles)
+
 find_program(EXE_TMPL_CC cppcms_tmpl_cc)
 
 # Required Lib List
@@ -33,12 +35,73 @@ set(APP_SRC
 	
 )
 
-#set(GCC_COVERAGE_COMPILE_FLAGS "-fprofile-arcs -ftest-coverage -Wall")
-#set(GCC_COVERAGE_LINK_FLAGS    "-lgcov")
+#############################################################################
+#
+# Setup various build flags for different supported compilers and systems
+#
+#############################################################################
 
-#set( CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS},-Wl " )
-#set( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
-#set( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}" )
+if(CMAKE_COMPILER_IS_GNUCXX)
+	check_cxx_source_compiles(
+		"#if __GNUC__ < 4
+		#error
+		#endif
+		int main() {}"
+		GCC_IS_GCC4)
+
+	set(CXX_FLAGS "-Wall -Wextra")
+	set(C_FLAGS "-Wall -Wextra")
+
+	if(CMAKE_SYSTEM_NAME STREQUAL "SunOS")
+		set(CXX_FLAGS "${CXX_FLAGS} -pthreads")
+	endif()
+
+	if(NOT GCC_IS_GCC4)
+		# Uninitalized checks are bogous under gcc-3.4
+		set(CXX_FLAGS "${CXX_FLAGS} -Wno-uninitialized")
+	endif()
+
+	if(IS_WINDOWS)
+		if(GCC_IS_GCC4) 
+			# Very important, otherwise process would not start under cygwin
+			set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -Wl,--enable-auto-import")
+		else()
+			# gcc-3 does not have shared library for libstdc++ -- cause dll faitures with locale
+			set(DISABLE_SHARED ON)
+		endif()
+	endif()
+
+	if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" OR CMAKE_SYSTEM_NAME STREQUAL "NetBSD")
+		message("Addign rdynamic")
+		set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -rdynamic")
+	endif()
+
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+	set(CXX_FLAGS "-Wall -Wextra")
+	if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+		set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -rdynamic")
+	endif()
+
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+	set(CXX_FLAGS "-Wall")
+	set(C_FLAGS "-Wall")
+elseif(MSVC)
+	set(CXX_FLAGS "/EHsc /W3")
+	set(C_FLAGS "/W3")
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "SunPro")
+	#
+	# We use STL port under Sun Studio, standard library is broken
+	#
+	
+	set(CXX_FLAGS "-library=stlport4 -xannotate=no")
+
+	if(CMAKE_SYSTEM_NAME STREQUAL "SunOS")
+		set(CXX_FLAGS "${CXX_FLAGS} -mt")
+	endif()
+endif()
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXX_FLAGS}")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${C_FLAGS}")
 
 # Views build
 add_custom_command(
