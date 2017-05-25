@@ -13,7 +13,7 @@ namespace app
        public:
         HomeController(cppcms::service &s);
 
-				void index(int s);
+        void index();
       };
     }
   }

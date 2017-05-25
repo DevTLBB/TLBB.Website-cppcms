@@ -7,15 +7,15 @@ namespace routes
 
   }
 
-  void API::main(std::string path)
-  {
-    try
-    {
-      cppcms::application::main(path);
-    }
-    catch(std::exception &e)
-    {
+ // void API::main(std::string path)
+ // {
+ //   try
+ //   {
+ //     cppcms::application::main(path);
+ //   }
+ //   catch(std::exception &e)
+ //   {
 
-    }
-  }
+ //   }
+ // }
 }

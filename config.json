@@ -1,26 +1,26 @@
 {
-   "App" : {
-      "root" : "",
-      "host" : "localhost:8080",
-      "locdomain" : "localhost"
-   },
-   "service" : {
-      "ip"  : "0.0.0.0",
-      "api" : "http",
-      "port" : 80
-   },
-   "http" : {
-      "script" : "/mb.fcgi",
-      "rewrite" : [
-         { "regex" : "/media(/.+)", "pattern" : "$1" },
-         { "regex" : "/favicon\\.ico", "pattern" : "$0" },
-         { "regex" : "/robots\\.txt", "pattern" : "$0" },
-         { "regex" : ".*" , "pattern" : "/mb.fcgi$0" }
-      ]
-   },
-   "file_server" : {
-      "enable" : true,
-      "listing" : true,
-      "document_root" : "../resources/media"
-   }
+  "App" : {
+	"root" : "",
+	"host" : "localhost:8080",
+	"locdomain" : "localhost"
+  },
+  "service" : {
+	"ip"  : "0.0.0.0",
+	"api" : "http",
+	"port" : 8080
+  },
+  "http" : {
+	"script" : "/mb.fcgi",
+	"rewrite" : [
+	  { "regex" : "/media(/.+)", "pattern" : "$1" },
+	  { "regex" : "/favicon\\.ico", "pattern" : "$0" },
+	  { "regex" : "/robots\\.txt", "pattern" : "$0" },
+	  { "regex" : ".*" , "pattern" : "/mb.fcgi$0" }
+	]
+  },
+  "file_server" : {
+	"enable" : true,
+	"listing" : true,
+	"document_root" : "../resources/media"
+  }
 }

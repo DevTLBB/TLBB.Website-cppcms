@@ -8,8 +8,7 @@ namespace app
 {
   namespace core
   {
-    Provider::Provider(Router &s) : cppcms::application(s),
-                                             Route(s)
+    Provider::Provider(cppcms::service &s) : cppcms::application(s)
     {
     }
 

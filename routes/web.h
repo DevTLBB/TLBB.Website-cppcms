@@ -10,7 +10,7 @@ namespace routes
    public:
     Web(cppcms::service &s);
 
-	  virtual void main(std::string path);
+	// virtual void main(std::string path);
   };
 }
 

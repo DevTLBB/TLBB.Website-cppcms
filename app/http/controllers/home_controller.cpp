@@ -1,24 +1,25 @@
 #include <cppcms/url_mapper.h>
 #include <cppcms/url_dispatcher.h>
 #include "home_controller.h"
+
 #include "../../../resources/views/layouts/app.h"
 
 namespace app
 {
-	namespace http
+  namespace http
+  {
+	namespace controllers
 	{
-		namespace controllers
-		{
-			HomeController::HomeController(cppcms::service &s) : Controller(s)
-			{
-				//ctl.dispatcher().assign("/", &HomeController::index, 1, 1);
-			}
+	  HomeController::HomeController(cppcms::service &s) : Controller(s)
+	  {
+		dispatcher().assign("/", &HomeController::index, this);
+	  }
 
-			void HomeController::index(int s)
-			{
-			
-			}
-		}
+	  void HomeController::index()
+	  {
+
+	  }
 	}
+  }
 }
 
