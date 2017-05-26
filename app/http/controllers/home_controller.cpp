@@ -17,10 +17,10 @@ namespace app
 
     	void HomeController::index()
     	{
-    	  views::layouts::App view;
+    	  views::layouts::app::Home view;
     	  view.text = ">>>Hello<<<";
         view.title = "Home Page";
-    	  render("app", view);
+    	  render("Home", view);
     	}
     }
   }
