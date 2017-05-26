@@ -1,18 +1,21 @@
 <% c++ #include "../resources/views/layouts/app.h" %>
 <% skin bootstrap_skin %>
 <% view layouts_app uses views::layouts::App %>
-<% template render() %>
-<!DOCTYPE html>
+<% template css() %><% end %>
+<% template wrapper_content() %><% end %>
+<% template js() %><% end %>
+<% template render() %><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title><%= title %></title>
+  <% include css() %>
 </head>
 <body>
-  <h1><%= text %> World!</h1>
+  <% include wrapper_content() %>
+  <% include js() %>
 </body>
-</html>
-<% end template %>
+</html><% end template %>
 <% end view %>
-<% end skin %> 
+<% end skin %>
