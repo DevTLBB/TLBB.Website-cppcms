@@ -29,8 +29,8 @@ set(APP_REQUIRED_LIB
 set(VIEWS_TMPL
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app.tmpl
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app/home.tmpl
-	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/home.tmpl
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/dashboard.tmpl
+	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/home.tmpl
 
 )
 

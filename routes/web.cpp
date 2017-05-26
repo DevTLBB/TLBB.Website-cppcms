@@ -10,24 +10,29 @@ namespace routes
 {
   Web::Web(cppcms::service &s) : app::core::Provider(s)
   {
-	//dispatcher().assign("/", &app::http::controllers::HomeController::index, this);
+    //dispatcher().assign("/", &app::http::controllers::HomeController::index, this);
     //mapper().assign("number","/number/{1}");
     attach(new app::http::controllers::HomeController(s),
       "home",
       "{1}",
       "/",
       1);
- }
+    attach(new app::http::controllers::DashboardController(s),
+      "dashboard",
+      "/dashboard{1}",
+      "/dashboard((/?.*))",
+      1);
+  }
 
- // void Web::main(std::string path)
- // {
- //   try
- //   {
- //     cppcms::application::main(path);
- //   }
- //   catch(std::exception &e)
- //   {
+  // void Web::main(std::string path)
+  // {
+  //   try
+  //   {
+  //     cppcms::application::main(path);
+  //   }
+  //   catch(std::exception &e)
+  //   {
 
- //   }
- // }
+  //   }
+  // }
 }

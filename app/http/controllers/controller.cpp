@@ -4,13 +4,12 @@ namespace app
 {
   namespace http
   {
-	namespace controllers
-	{
-	  Controller::Controller(cppcms::service &s) : app::core::Provider(s)
-	  {
+    namespace controllers
+    {
+      Controller::Controller(cppcms::service &s) : app::core::Provider(s)
+      {
 
-	  }
-	}
+      }
+    }
   }
 }
-
