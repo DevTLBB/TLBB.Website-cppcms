@@ -8,20 +8,20 @@ namespace app
 {
   namespace http
   {
-	namespace controllers
-	{
-	  HomeController::HomeController(cppcms::service &s) : Controller(s)
-	  {
-		dispatcher().assign(".*", &HomeController::index, this);
-	  }
+    namespace controllers
+    {
+    	HomeController::HomeController(cppcms::service &s) : Controller(s)
+    	{
+    	  dispatcher().assign(".*", &HomeController::index, this);
+    	}
 
-	  void HomeController::index()
-	  {
-        views::layouts::app c;  
-        c.text=">>>Hello<<<";  
-        render("app",c); 
-	  }
-	}
+    	void HomeController::index()
+    	{
+    	  views::layouts::app c;
+    	  c.text=">>>Hello<<<";
+    	  render("app",c);
+    	}
+    }
   }
 }
 
