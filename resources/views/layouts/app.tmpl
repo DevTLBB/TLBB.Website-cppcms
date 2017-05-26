@@ -1,11 +1,16 @@
 <% c++ #include "../resources/views/layouts/app.h" %>
-<% skin bootstrap %>
-<% view app uses views::layouts::app %>
+<% skin bootstrap_skin %>
+<% view App uses views::layouts::App %>
 <% template render() %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title><%= title %></title>
+</head>
 <body>
-<h1><%= text %> World!</h1>
+  <h1><%= text %> World!</h1>
 </body>
 </html>
 <% end template %>

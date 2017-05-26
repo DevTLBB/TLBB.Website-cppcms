@@ -25,6 +25,6 @@
   },
   "views" : {
 	"paths" : ["."],
-  	"skins" : ["bootstrap"]
+  	"skins" : ["bootstrap_skin"]
   }
 }

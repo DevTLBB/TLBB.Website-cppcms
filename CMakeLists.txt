@@ -28,6 +28,7 @@ set(APP_REQUIRED_LIB
 
 set(VIEWS_TMPL
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app.tmpl
+	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app/home.tmpl
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/home.tmpl
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/dashboard.tmpl
 
@@ -126,7 +127,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${C_FLAGS}")
 #############################################################################
 
 # Views build
-set(VIEW_SKIN bootstrap)
+set(VIEW_SKIN bootstrap_skin)
 add_custom_command(
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/view.cpp
 	COMMAND ${EXE_TMPL_CC}

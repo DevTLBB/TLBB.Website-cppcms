@@ -2,7 +2,7 @@
 #include <cppcms/url_mapper.h>
 #include <cppcms/url_dispatcher.h>
 
-#include "../../../resources/views/layouts/app.h"
+#include "../../../resources/views/layouts/app/home.h"
 
 namespace app
 {
@@ -17,9 +17,10 @@ namespace app
 
     	void HomeController::index()
     	{
-    	  views::layouts::app c;
-    	  c.text=">>>Hello<<<";
-    	  render("app",c);
+    	  views::layouts::App view;
+    	  view.text = ">>>Hello<<<";
+        view.title = "Home Page";
+    	  render("app", view);
     	}
     }
   }
