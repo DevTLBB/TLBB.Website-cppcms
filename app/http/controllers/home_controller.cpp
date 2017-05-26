@@ -20,7 +20,7 @@ namespace app
     	  views::layouts::app::Home view;
     	  view.text = ">>>Hello<<<";
         view.title = "Home Page";
-    	  render("Home", view);
+    	  render("layouts_app_home", view);
     	}
     }
   }
