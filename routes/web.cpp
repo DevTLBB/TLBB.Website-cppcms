@@ -5,6 +5,7 @@
 
 #include "../app/http/controllers/controller.h"
 #include "../app/http/controllers/home_controller.h"
+#include "../app/http/controllers/dashboard_controller.h"
 
 namespace routes
 {

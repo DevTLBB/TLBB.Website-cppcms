@@ -2,7 +2,7 @@
 #include <cppcms/url_mapper.h>
 #include <cppcms/url_dispatcher.h>
 
-#include "../../../resources/views/layouts/app/home.h"
+#include "../../../resources/views/dashboard.h"
 
 namespace app
 {
@@ -19,8 +19,8 @@ namespace app
     	{
     	  views::Dashboard view;
     	  view.text = ">>>Hello<<<";
-        view.title = "Home Page";
-    	  render("layouts_app_home", view);
+          view.title = "Home Page";
+    	  render("dashboard", view);
     	}
     }
   }
