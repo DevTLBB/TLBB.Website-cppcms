@@ -2,8 +2,7 @@
   "app" : {
 	"root" : "",
 	"host" : "localhost:8080",
-	"locdomain" : "localhost",
-	"media": "/media"
+	"locdomain" : "localhost"
   },
   "service" : {
 	"ip"  : "0.0.0.0",

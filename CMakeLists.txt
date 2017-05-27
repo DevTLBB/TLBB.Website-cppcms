@@ -45,6 +45,7 @@ set(APP_SRC
   app/main.cpp
   app/core/provider.cpp
   app/core/router.cpp
+  app/core/view.cpp
   routes/web.cpp
   routes/api.cpp
   app/http/controllers/controller.cpp

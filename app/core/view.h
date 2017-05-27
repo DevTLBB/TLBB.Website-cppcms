@@ -10,12 +10,9 @@ namespace app
   {
 	struct View : public cppcms::base_content
 	{
-	  std::string asset(std::string path)
-	  {
-	  	return this->media + path;
-	  }
+	  View();
+	  std::string asset(std::string path);
 	  std::string media;
-
 	};
   }
 }
