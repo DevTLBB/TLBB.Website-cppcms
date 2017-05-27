@@ -38,8 +38,8 @@ namespace app
       // Write Logs
       
       std::cout << "============== Connection Info ===============" << std::endl;
-	  std::cout << "IP: " << request().remote_host() << std::endl;
-	  std::cout << "Path: " << path << std::endl;
+      std::cout << "IP: " << request().remote_host() << std::endl;
+      std::cout << "Path: " << path << std::endl;
     }
   }
 }

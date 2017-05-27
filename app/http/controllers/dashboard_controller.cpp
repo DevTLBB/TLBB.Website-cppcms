@@ -10,18 +10,18 @@ namespace app
   {
     namespace controllers
     {
-    	DashboardController::DashboardController(cppcms::service &s) : Controller(s)
-    	{
-    	  dispatcher().assign(".*", &DashboardController::index, this);
-    	}
+        DashboardController::DashboardController(cppcms::service &s) : Controller(s)
+        {
+          dispatcher().assign(".*", &DashboardController::index, this);
+        }
 
-    	void DashboardController::index()
-    	{
-    	  views::Dashboard view;
-    	  view.text = ">>>Hello<<<";
+        void DashboardController::index()
+        {
+          views::Dashboard view;
+          view.text = ">>>Hello<<<";
           view.title = "Home Page";
-    	  render("dashboard", view);
-    	}
+          render("dashboard", view);
+        }
     }
   }
 }

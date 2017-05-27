@@ -6,13 +6,13 @@ namespace app
 {
   namespace core
   {
-	class Router : public cppcms::application
-	{
-	  public:
-		Router(cppcms::service &s);
+    class Router : public cppcms::application
+    {
+      public:
+        Router(cppcms::service &s);
 
-		virtual void main(std::string path);
-	};
+        virtual void main(std::string path);
+    };
   }
 }
 #endif

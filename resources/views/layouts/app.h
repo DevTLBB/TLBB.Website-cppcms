@@ -8,7 +8,7 @@ namespace views
   {
     struct App : public app::core::View
     {
-	  std::string title;
+      std::string title;
       std::string text;
     };
   }

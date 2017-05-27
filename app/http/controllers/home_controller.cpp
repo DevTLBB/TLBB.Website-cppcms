@@ -10,18 +10,18 @@ namespace app
   {
     namespace controllers
     {
-    	HomeController::HomeController(cppcms::service &s) : Controller(s)
-    	{
-    	  dispatcher().assign(".*", &HomeController::index, this);
-    	}
+        HomeController::HomeController(cppcms::service &s) : Controller(s)
+        {
+          dispatcher().assign(".*", &HomeController::index, this);
+        }
 
-    	void HomeController::index()
-    	{
-    	  views::layouts::app::Home view;
-    	  view.text = ">>>Hello<<<";
+        void HomeController::index()
+        {
+          views::layouts::app::Home view;
+          view.text = ">>>Hello<<<";
         view.title = "Home Page";
-    	  render("layouts_app_home", view);
-    	}
+          render("layouts_app_home", view);
+        }
     }
   }
 }
