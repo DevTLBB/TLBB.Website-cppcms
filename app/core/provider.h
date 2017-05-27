@@ -10,7 +10,6 @@ namespace app
 	{
 	  public:
 		Provider(cppcms::service &s);
-
 		// virtual void main(std::string path);
 	};
   }

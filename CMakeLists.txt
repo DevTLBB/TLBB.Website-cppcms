@@ -27,11 +27,11 @@ set(APP_REQUIRED_LIB
 #############################################################################
 
 set(VIEWS_TMPL
-	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app.tmpl
-	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app/home.tmpl
-	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app/dashboard.tmpl
-	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/dashboard.tmpl
-	${CMAKE_CURRENT_SOURCE_DIR}/resources/views/home.tmpl
+  ${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app.tmpl
+  ${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app/home.tmpl
+  ${CMAKE_CURRENT_SOURCE_DIR}/resources/views/layouts/app/dashboard.tmpl
+  ${CMAKE_CURRENT_SOURCE_DIR}/resources/views/dashboard.tmpl
+  ${CMAKE_CURRENT_SOURCE_DIR}/resources/views/home.tmpl
 
 )
 
@@ -43,14 +43,14 @@ set(VIEWS_TMPL
 
 set(APP_SRC
   app/main.cpp
-	app/core/provider.cpp
-	app/core/router.cpp
-	routes/web.cpp
-	routes/api.cpp
-	app/http/controllers/controller.cpp
-	app/http/controllers/dashboard_controller.cpp
-	app/http/controllers/home_controller.cpp
-	
+  app/core/provider.cpp
+  app/core/router.cpp
+  routes/web.cpp
+  routes/api.cpp
+  app/http/controllers/controller.cpp
+  app/http/controllers/dashboard_controller.cpp
+  app/http/controllers/home_controller.cpp
+
 )
 
 #############################################################################
