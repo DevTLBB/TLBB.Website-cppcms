@@ -12,7 +12,6 @@ namespace app
 	{
 	  View();
 	  std::string asset(std::string path);
-	  std::string media;
 	};
   }
 }
