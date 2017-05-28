@@ -1,6 +1,18 @@
 <% c++ #include "../resources/views/layouts/app/dashboard.h" %>
 <% skin bootstrap_skin %>
 <% view layouts_app_dashboard uses views::layouts::app::Dashboard extends layouts_app %>
-
+<% template dashboard_js() %>
+<% template css() %>
+  <link rel="stylesheet" href="<%= asset("/bootstrap/css/bootstrap.min.css") %>" />
+<% end %>
+<% template js() %>
+  <script type="text/javascript" src="<%= asset("/js/jquery-3.2.1.min.js") %>"></script>
+  <script type="text/javascript" src="<%= asset("/tether/js/tether.min.js") %>"></script>
+  <script type="text/javascript" src="<%= asset("/bootstrap/js/bootstrap.min.js") %>"></script>
+<% end %>
+<% template dashboard_content() %><% end %>
+<% template wrapper_content() %>
+  <% include dashboard_content() %>
+<% end template %>
 <% end view %>
 <% end skin %>

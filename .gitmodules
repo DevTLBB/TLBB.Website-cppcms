@@ -1,3 +1,6 @@
 [submodule "cppcms"]
 	path = cppcms
 	url = https://github.com/artyom-beilis/cppcms.git
+[submodule "cppdb"]
+	path = cppdb
+	url = https://github.com/melpon/cppdb.git

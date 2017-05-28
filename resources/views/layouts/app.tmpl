@@ -10,17 +10,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title><%= title %></title>
-  <link rel="stylesheet" href="<%= asset("/bootstrap/css/bootstrap.min.css") %>" />
-  <link rel="stylesheet" href="<%= asset("/css/app.hack.css") %>" />
   <% include css() %>
+  <link rel="stylesheet" href="<%= asset("/css/app.hack.css") %>" />
 </head>
 <body>
   <% include wrapper_content() %>
-  <script type="text/javascript" src="<%= asset("/js/jquery-3.2.1.min.js") %>"></script>
-  <script type="text/javascript" src="<%= asset("/tether/js/tether.min.js") %>"></script>
-  <script type="text/javascript" src="<%= asset("/bootstrap/js/bootstrap.min.js") %>"></script>
-  <script type="text/javascript" src="<%= asset("/js/app.hack.js") %>"></script>
   <% include js() %>
+  <script type="text/javascript" src="<%= asset("/js/app.hack.js") %>"></script>
 </body>
 </html><% end template %>
 <% end view %>
