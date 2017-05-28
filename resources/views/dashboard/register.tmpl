@@ -1,0 +1,22 @@
+<% c++ #include "../resources/views/dashboard/register.h" %>
+<% skin bootstrap_skin %>
+<% view dashboard_register uses views::dashboard::Register extends dashboard %>
+<% template dashboard_content() %>
+  <h3 class="mt-3 text-info text-center">Tạo tài khoản của bạn</h3>
+  <div class="row mt-3">
+    <div class="col-sm-8 text-center">
+      <h5 class="text-muted">Bạn chỉ cần có một tài khoản</h5>
+      <p>Một tài khoản miễn phí giúp bạn truy cập vào nhiều dịch vụ và sản phẩm của chúng tôi.</p>
+      <img src="<%= asset("/images/devices_1x.png") %>" class="img-fluid" alt="Responsive image" />
+      <h5 class="text-muted mt-3">Mang theo tất cả nội dung bên bạn</h5>
+      <p>Chuyển giữa các thiết bị và bắt đầu tại bất cứ vị trí nào bạn đã dừng lại.</p>
+    </div>
+    <div class="col-sm-4">
+      <form method="POST" action="<% url "register" %>">
+        <% form as_dl register_form %>
+      </form>
+    </div>
+  </div>
+<% end template %>
+<% end view %>
+<% end skin %>

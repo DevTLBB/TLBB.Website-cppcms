@@ -1,8 +1,11 @@
 <% c++ #include "../resources/views/dashboard.h" %>
 <% skin bootstrap_skin %>
 <% view dashboard uses views::Dashboard extends layouts_app_dashboard %>
-<% template dashboard_content() %>
-
+<% template dashboard_content() %><% end %>
+<% template layouts_dashboard_content() %>
+  <div class="container">
+    <% include dashboard_content() %>
+  </div>
 <% end template %>
 <% end view %>
 <% end skin %>

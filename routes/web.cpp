@@ -12,7 +12,7 @@ namespace routes
   Web::Web(cppcms::service &s) : app::core::Provider(s)
   {
     //dispatcher().assign("/", &app::http::controllers::HomeController::index, this);
-    //mapper().assign("number","/number/{1}");
+    //mapper().assign("login","/login");
     attach(new app::http::controllers::HomeController(s),
       "home",
       "{1}",

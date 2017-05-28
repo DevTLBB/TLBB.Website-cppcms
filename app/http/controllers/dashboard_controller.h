@@ -1,6 +1,7 @@
 #ifndef APP_HTTP_CONTROLLERS_DASHBOARD_CONTROLLER_H_
 #define APP_HTTP_CONTROLLERS_DASHBOARD_CONTROLLER_H_
 #include "controller.h"
+#include "../../core/view.h"
 
 namespace app
 {
@@ -12,11 +13,15 @@ namespace app
       {
        public:
         DashboardController(cppcms::service &s);
+        //virtual void ini(app::core::View &v);
 
-        // virtual void main(std::string path);
+       public:
         void index();
+        void user_login();
+        void user_register();
       };
     }
   }
 }
+
 #endif

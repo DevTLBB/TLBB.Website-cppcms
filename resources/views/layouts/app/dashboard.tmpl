@@ -13,12 +13,15 @@
   <script type="text/javascript" src="<%= asset("/bootstrap/js/bootstrap.min.js") %>"></script>
   <% include dashboard_js() %>
 <% end %>
-<% template dashboard_content() %><% end %>
+<% template layouts_dashboard_content() %><% end %>
 <% template wrapper_content() %>
-  <nav class="navbar navbar-inverse bg-primary">
-    <!-- Navbar content -->
+  <nav class="navbar navbar-inverse bg-inverse">
+    <div class="container text-right">
+      <a class="btn btn-sm align-middle btn-primary" href="<% url "login" %>">Đăng nhập</a>
+      <a class="btn btn-sm align-middle btn-success" href="<% url "register" %>">Đăng kí</a>
+    </div>
   </nav>
-  <% include dashboard_content() %>
+  <% include layouts_dashboard_content() %>
 
 <% end template %>
 <% end view %>
