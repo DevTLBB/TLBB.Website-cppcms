@@ -1,6 +1,7 @@
 #include "dashboard_controller.h"
 #include <cppcms/url_mapper.h>
 #include <cppcms/url_dispatcher.h>
+#include <cppdb/frontend.h>
 
 #include "../../../resources/views/dashboard.h"
 #include "../../../resources/views/dashboard/register.h"
@@ -42,11 +43,24 @@ namespace app
         views::dashboard::Register view;
         view.title = "Đăng kí tài khoản";
         
-        if(request().request_method() == "POST")
+        views::dashboard::Register::RegisterForm *c = &view.register_form;
+        if (request().request_method() == "POST")
         {
-          view.register_form.load(context());
-          std::cout << view.register_form.name.value();
+          c->load(context());
+          if (view.register_form.validate())
+          {
+            cppdb::session sql(this->model.web);
+            //cppdb::transaction db(sql);
+            sql << "INSERT INTO account(name,password)"
+              "VALUES(?,MD5(?))"
+              << c->name.value()
+              << c->password.value()
+              << cppdb::exec;
+            //db.commit();
+          }
         }
+        c->password.clear();
+        c->confirm_password.clear();
 
         // Render view at the end
         render("dashboard_register", view);

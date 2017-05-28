@@ -18,6 +18,7 @@ find_program(EXE_TMPL_CC cppcms_tmpl_cc)
 set(APP_REQUIRED_LIB
   cppcms
   booster
+  cppdb
 )
 
 #############################################################################
