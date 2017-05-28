@@ -3,6 +3,7 @@
 #include <cppcms/url_dispatcher.h>
 
 #include "../../../resources/views/dashboard.h"
+#include "../../models/account.h"
 
 namespace app
 {
@@ -19,6 +20,8 @@ namespace app
         {
           views::Dashboard view;
           view.title = "Quản lí tài khoản cá nhân";
+
+          // Render view at the end
           render("dashboard", view);
         }
     }
