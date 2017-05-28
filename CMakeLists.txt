@@ -43,8 +43,9 @@ set(VIEWS_TMPL
 
 set(APP_SRC
   app/main.cpp
-  app/core/provider.cpp
   app/core/router.cpp
+  app/core/provider.cpp
+  app/core/model.cpp
   app/core/view.cpp
   routes/web.cpp
   routes/api.cpp

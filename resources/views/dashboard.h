@@ -6,8 +6,6 @@ namespace views
 {
   struct Dashboard : public views::layouts::app::Dashboard
   {
-    // std::string title;
-    // std::string text;
   };
 }
 

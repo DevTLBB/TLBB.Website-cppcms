@@ -4,7 +4,7 @@ namespace app
 {
   namespace core
   {
-    Provider::Provider(cppcms::service &s) : cppcms::application(s)
+    Provider::Provider(cppcms::service &s) : cppcms::application(s), model(s)
     {
     }
     

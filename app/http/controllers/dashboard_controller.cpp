@@ -18,8 +18,7 @@ namespace app
         void DashboardController::index()
         {
           views::Dashboard view;
-          view.text = ">>>Hello<<<";
-          view.title = "Home Page";
+          view.title = "Quản lí tài khoản cá nhân";
           render("dashboard", view);
         }
     }
