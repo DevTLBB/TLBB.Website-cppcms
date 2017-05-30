@@ -40,3 +40,7 @@ sudo make install && sudo rm -r *
 ```bash
 ./server.sh
 ```
+
+**Donation**
+
+<a href='https://pledgie.com/campaigns/33950'><img alt='Click here to lend your support to: Website for TLBB game in C++ and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/33950.png?skin_name=chrome' border='0' ></a>
